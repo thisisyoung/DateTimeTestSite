@@ -16,8 +16,9 @@ namespace DateTimeTestSite
             CultureInfo currentCulture = CultureInfo.CurrentCulture;
             Response.Write("date time:" + dateTime.ToString() + "<br>");
             Response.Write("server side culture info:" + currentCulture.DisplayName + "<br>");
-            Response.Write("client side language info:" + Request.UserLanguages[0] + "<br>");
-            Response.Write("date time display as client side culture format:" + dateTime.ToString(new CultureInfo(Request.UserLanguages[0]).DateTimeFormat) + "<br>");
+            Response.Write("client side Culture:" + CultureInfo.CurrentUICulture.DisplayName + "<br>");
+            Response.Write("date time display as client side culture format:" + dateTime.ToString(CultureInfo.CurrentUICulture.DateTimeFormat) + "<br>");
+            
         }
     }
 }
